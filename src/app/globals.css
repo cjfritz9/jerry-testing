@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Use dark mode always */
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  /*--foreground-rgb: 0, 0, 0;*/
+  /*--background-start-rgb: 214, 219, 220;*/
+  /*--background-end-rgb: 255, 255, 255;*/
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  h1 {
+    @apply text-4xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-3xl font-bold mb-3;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold mb-2;
+  }
+
+  h4 {
+    @apply text-xl font-semibold mb-2;
+  }
+}
+
+.code-section {
+  --code-snippet-highlight-color: #ffffff1f;
+  @apply py-8;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  @apply pb-2;
+}
+
+code.line-single {
+  background: var(--code-snippet-highlight-color);
+  @apply font-semibold p-1 px-2 rounded-md;
+}
+
+ol {
+  list-style: numeric;
+  @apply py-4 pl-4;
+}
+
+
+ul {
+  list-style: '•';
+  @apply py-4;
+}
+
+li {
+  @apply pl-2;
+  @apply py-1;
+}
+
+a {
+  @apply text-blue-400 font-bold;
+}
